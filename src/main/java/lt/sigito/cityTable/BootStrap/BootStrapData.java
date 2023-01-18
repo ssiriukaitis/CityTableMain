@@ -1,17 +1,17 @@
 package lt.sigito.cityTable.BootStrap;
 
 import lt.sigito.cityTable.Repository.CityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
 
+    @Autowired
     private CityRepository cityRepository;
 
-    public BootStrapData(CityRepository cityRepository){
-        this.cityRepository = cityRepository;
-    }
+
     @Override
     public void run(String... args) throws Exception {
 
