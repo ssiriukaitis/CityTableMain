@@ -5,6 +5,7 @@ import lt.sigito.cityTable.Service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,5 +28,10 @@ public class CityController {
     public @ResponseBody List<City> getAllCities(){
         return cityService.getAllCities();
 
+    }
+    ////http://localhost:8080/citymapping/city/64
+    @GetMapping(path = "/city/{id}")
+    public @ResponseBody City getCityById(@PathVariable int id){
+        return cityService.getCityById(id);
     }
 }
