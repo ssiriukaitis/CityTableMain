@@ -13,9 +13,9 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "city")
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
 public class City {
 
@@ -29,8 +29,7 @@ public class City {
     @Column(name = "District")
     private String district;
     @Column(name = "Population")
-    private String population;
-
+    private Integer population;
 
 }
 
