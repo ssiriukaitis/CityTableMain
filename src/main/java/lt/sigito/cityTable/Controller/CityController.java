@@ -1,6 +1,7 @@
 package lt.sigito.cityTable.Controller;
 
 import lt.sigito.cityTable.Repository.City;
+import lt.sigito.cityTable.Repository.CityRepository;
 import lt.sigito.cityTable.Service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
+    @Autowired
+    private CityRepository cityRepository;
+
     //http://localhost:8080/citymapping/test
     @GetMapping(path = "/test")
     public @ResponseBody String getTestPage() {
@@ -33,5 +37,15 @@ public class CityController {
     @GetMapping(path = "/city/{id}")
     public @ResponseBody City getCityById(@PathVariable int id){
         return cityService.getCityById(id);
+    }
+//       http://localhost:8080/citymapping/mycity/64
+    @GetMapping(path = "/mycity/{id}")
+    public @ResponseBody City getMyCityById(@PathVariable int id){
+        return cityService.getMyCityById(id);
+    }
+    //   http://localhost:8080/citymapping/mycity/Like/du
+    @GetMapping(path = "/mycity/Like/{name}")
+    public @ResponseBody List<City> getMyCityByNameLike(@PathVariable String name){
+        return cityService.getMyCityByNameLike("%" + name + "%");
     }
 }
