@@ -8,6 +8,7 @@ public class CityTableApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CityTableApplication.class, args);
+
 	}
 
 }

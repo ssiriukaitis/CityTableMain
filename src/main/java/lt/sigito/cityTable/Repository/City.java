@@ -20,15 +20,15 @@ import lombok.ToString;
 public class City {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     private Integer id;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
-    @Column(name = "CountryCode")
+    @Column(name = "countrycode")
     private String countryCode;
-    @Column(name = "District")
+    @Column(name = "district")
     private String district;
-    @Column(name = "Population")
+    @Column(name = "population")
     private Integer population;
 
 }
